@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login-page {
+    height: 100vh;
+    width: 100%;
+    background-color: #210725;
+    background-image: url('../../../public/assets/images/fundoAcai.png'), url('../../../public/assets/images/acaiseed.png');
+    background-position:left, right top;
+    background-size: contain, 20%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: bebas;
+    
+    .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .titulo {
+            margin-top: 25px;
+            color: #74815C;
+            font-size: 5rem;
+        }
+
+        img {
+            width:20%;
+        }
+    }
+    h2 {
+        color: #FFFFFF;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .login {
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        
+        .form {
+            display: flex;
+            flex-direction: column;
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                label {
+                    color: #FFFFFF;
+                    text-align: left;
+                    margin-bottom: 5px;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #F2E4DA;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+        .botao {
+            display: flex;
+            justify-content: center;
+
+            button {
+                width: 140px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #74815C;
+                color: #FFFFFF;
+                cursor: pointer;
+                transition: background-color 0.3s;
+    
+                &:hover {
+                    background-color: #4A5939;
+                }
+            }
+        }
+        
+    }
+}
