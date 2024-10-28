@@ -1,8 +1,26 @@
 {
   "orders": [
     {
-      "status": "saiu para a entrega",
-      "id": "1"
+      "status": "pedido confirmado",
+      "id": "1",
+      "items": [
+        {
+          "name": "Bomba de Açaí",
+          "image": "/assets/images/bombaAcai.png",
+          "price": 10.4
+        }
+      ]
+    },
+    {
+      "status": "em preparo",
+      "id": "2",
+      "items": [
+        {
+          "name": "Bomba de Açaí",
+          "image": "/assets/images/bombaAcai.png",
+          "price": 10.4
+        }
+      ]
     },
     {
       "id": "2",

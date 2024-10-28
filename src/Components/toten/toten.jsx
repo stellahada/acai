@@ -46,16 +46,34 @@ const Totem = () => {
 
     return (
         <div className="totem-container">
-            <h2>Acompanhamento dos Pedidos</h2>
+            <div className='nav'>
+                    <img src='./assets/images/Button.png' alt='voltar'></img>
+                <div className='text'>
+                    <h3>Acompanhamento do Pedido</h3>
+                    <div className='cart'>
+                        <hr/>
+                        <img src='./assets/images/shopping-cart.png'/>
+                        <p> Meu pedido</p>
+
+                    </div>
+                </div>
+                
+            </div>
+            
             {orders && orders.length > 0 ? (
                 orders.map(order => {
                     const total = calculateTotal(order.items);
                     const finalTotal = total + deliveryFee;
                     return (
                         <div key={order.id} className="order">
-                            
                             <div className='orderDetails'>
-                            <h3>Pedido #{order.id}</h3>
+                                <div className='cliente'>
+                                    <h3>Pedido #{order.id}</h3>
+                                    <hr/>
+                                    <img src='./assets/images/Map-pin.png' alt='map-pin'/>
+                                    <p>Rua Saí Gua-çu, 1</p>
+                                </div>
+
                                 <ul>
                                     {order.items && order.items.length > 0 ? (
                                         order.items.map((item, index) => (
@@ -96,15 +114,24 @@ const Totem = () => {
                             </div>
                                 <div className="status-container">
                                     <div className="status">
-                                        <img src={getStatusImage(order.status, 'pedido confirmado')} alt="Pedido confirmado" />
+                                        <div className='image'>
+                                            <img src={getStatusImage(order.status, 'pedido confirmado')} alt="Pedido confirmado" />
+                                            <img className='line' src='./assets/images/linhaElipse.png'/>
+                                        </div>
                                         <p>Pedido confirmado pelo restaurante</p>
                                     </div>
                                     <div className="status">
-                                        <img src={getStatusImage(order.status, 'em preparo')} alt="Em preparo" />
+                                        <div className='image'>
+                                            <img src={getStatusImage(order.status, 'em preparo')} alt="Em preparo" />
+                                            <img className='line' src='./assets/images/linhaElipse.png'/>
+                                        </div>
                                         <p>Em preparo</p>
+
                                     </div>
                                     <div className="status">
+                                        <div className='image'>
                                         <img src={getStatusImage(order.status, 'saiu para a entrega')} alt="Saiu para a entrega" />
+                                        </div>
                                         <p>Saiu para a entrega</p>
                                     </div>
                                 </div>
@@ -114,6 +141,7 @@ const Totem = () => {
             ) : (
                 <p>Sem pedidos ativos no momento.</p>
             )}
+            
         </div>
     );
 };
